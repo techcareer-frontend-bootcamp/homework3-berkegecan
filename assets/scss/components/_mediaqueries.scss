@@ -1,0 +1,151 @@
+@media screen and (max-width: 768px) {
+  @keyframes animate{
+    0%   {top: -3rem;}
+    50%  {top: 0;}
+  }
+
+  .show {
+    top: 150;
+    transform: translateY(253px);
+    transition: transform 1s ;
+  }
+
+  // Navigation Bar
+  .nav {
+    &-flex {
+      left: 0;
+    }
+
+    &-toggle {
+      display: block;
+    }
+
+    &-main {
+      .nav-menu {
+        position: absolute;
+        top: -200px;
+        left: 0;
+        width: 100%;
+        background-color: $white-color;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        box-shadow: 0 1px 5px $border-color;
+        z-index: 1;
+         ul {
+           flex-direction: column;
+
+           li {
+            padding: 1.5rem 1rem;
+
+            a {
+              padding: .75rem 0;
+              margin-right: 0;
+              font-size: var(--big-font-size);
+        
+              &:hover {
+                background-color: transparent;
+                color: $border-color;
+                border-radius: none;
+              }
+            }
+          }
+         }
+      }
+    }
+  }
+
+  // Home Section
+  #description {
+    .home {
+      grid-template-rows: 1fr 5fr;
+
+      &-b {
+      grid-template-areas: 
+        "text" 
+        "image"
+        "button";
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 1fr);
+      padding: 3rem 1rem;
+
+      &-text {
+        text-align: center;
+
+        p {
+          max-width: 100%;
+        }
+      }
+
+      &-image {
+        text-align: center;
+
+        #img1{
+          position: relative;
+          width: 5rem;
+          top: -3rem;
+        }
+
+        #img2{
+          position: relative;
+          width: 5rem;
+          left: 0;
+          top: -3rem;
+        }
+      }
+      }
+    }
+  }
+
+  // Detail Section
+  #features {
+    .detail {
+      height: 88vh;
+      &-a {
+        padding-right: 0;
+      }
+
+      &-b {
+        padding-left: 0;
+
+        img {
+          width: 200px;
+        }
+      }
+    }
+  }
+
+  // Footer
+  #footer {
+    .footer-flex {
+      flex-direction: column;
+      
+      .social {
+        padding-top: .75rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 770px) and (max-width: 1100px) {
+  // Home Section
+  #description {
+    .home {
+      &-b {
+        grid-template-areas: 
+          "text image" 
+          "button button";
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        padding: 12rem 8rem 3rem;
+
+        // &-text {
+        //   p {
+        //     max-width: 14rem;
+        //   }
+        // }
+
+      
+      }
+    }
+  }
+}

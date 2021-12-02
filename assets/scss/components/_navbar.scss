@@ -1,0 +1,78 @@
+// Nav Menu
+@mixin d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav {
+  z-index: $z-fixed;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  padding: .5rem 0;
+  box-shadow: 0 1px 5px $border-color;
+  background-color: $body-color;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: $border-color;
+    opacity: .05;
+    z-index: -1;
+  }
+
+  &-toggle {
+    display: none;
+    margin-right: 1rem;
+    button {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+    }
+  }
+
+  &-flex {
+    @include d-flex;
+  }
+
+  &-logo a {
+    color: $first-color;
+
+    h1{
+      font-size: var(--normal-font-size);
+      font-weight: $font-bold;
+    }
+  }
+
+  &-main {
+    @include d-flex;
+
+    .nav-menu ul {
+      @include d-flex;
+
+      li {
+        a {
+          padding: .5rem 1rem;
+          margin-right: .5rem;
+          font-size: var(--normal-font-size);
+          color: $first-color;
+    
+          &:hover {
+            background-color: $second-color;
+            color: $white-color;
+            border-radius: 20px;
+          }
+        }
+      }
+    }
+
+    li {
+      padding: .5rem 0;
+    }
+  }
+}

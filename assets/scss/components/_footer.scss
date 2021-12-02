@@ -1,0 +1,41 @@
+// Footer
+#footer {
+  width: 100%;
+  padding: 1rem;
+  box-shadow: 0 1px 5px $border-color;
+  background-color: $body-color;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: $border-color;
+    opacity: .05;
+    z-index: -1;
+  }
+
+  .footer-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: var(--smaller-font-size);
+
+    .social {
+      a {
+        color: $first-color;
+        margin-right: .75rem;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &:hover {
+          color: $second-color;
+        }
+      }
+    }
+  }
+}

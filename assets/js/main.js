@@ -1,25 +1,50 @@
-/* show menu */
-const showMenu = (toggleId, navId) => {
-    const toggle = document.getElementById(toggleId),
-          nav    = document.getElementById(navId);
 
-    if(toggle && nav) {
-        toggle.addEventListener('click', () => {
-            nav.classList.toggle('show')
-        })
-    }
+// Selectors
+const toggle = document.getElementById('menu-button');
+const nav    = document.getElementById('menu');
+const menuItems = document.querySelectorAll(".menu-item");
+
+// Show / Remove Menu
+function toggleMenu() {
+  if(nav.classList.contains("show")) {
+    nav.classList.remove("show");
+  }
+  else {
+    nav.classList.add("show");
+  }
 }
 
-showMenu('nav-toggle', 'nav-menu')
+toggle.addEventListener("click", toggleMenu);
 
-/*=============== REMOVE MENU MOBILE ===============*/
-const navLink = document.querySelectorAll('.nav__link')
+// Items Show / Remove
+menuItems.forEach( 
+  function(menuItems) { 
+    menuItems.addEventListener("click", toggleMenu);
+  }
+)
 
-function linkAction(){
-    const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu class
-    navMenu.classList.remove('show')
-}
+// Smooth Scroll
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
 
-navLink.forEach(n => n.addEventListener('click', linkAction))
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
 
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});

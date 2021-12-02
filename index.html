@@ -13,21 +13,122 @@
     <!-- HEADER -->
     <header>
         <nav class="nav"> 
-
+            <div class="nav-flex container">
+                <div class="nav-logo">
+                    <a href="index.html"><h1>AirPods</h1></a>
+                </div>
+                <div class="nav-main">
+                    <div class="nav-toggle">
+                        <button id="menu-button"><i class='bx bx-menu bx-md'></i></button>
+                    </div>
+                    <div class="nav-menu" id="menu">
+                        <ul>
+                            <li>
+                                <a href="#description" class="menu-item">Descripcion</a>
+                            </li>
+                            <li>
+                                <a href="#features" class="menu-item">Features</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul>
+                        <li>    
+                            <a href="#compare" class="btn-dark">Compare</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav> 
     </header>
 
     <!-- MAIN CONTENT -->
     <main> 
-        
+        <!-- Section A: Home Pods -->
+        <section id="description">
+            <div class="container">
+                <div class="home">
+                    <div class="home-a">
+                        <div>
+                            <img src="./assets/img/icon1.svg" alt="">
+                            <a href="">AirPods <br> 2</a>
+                        </div>
+                        <div>
+                            <img src="./assets/img/icon3.svg" alt="">
+                            <a href="">AirPods <br> Pro</a>
+                        </div>
+                        <div>
+                            <img src="./assets/img/icon4.svg" alt="">
+                            <a href="">AirPods <br> Max</a>
+                        </div>
+                        <div>
+                            <img src="./assets/img/icon6.svg" alt="">
+                            <a href="">Apple Music <br><br></a>
+                        </div>
+                    </div>
+                    <div class="home-b">
+                        <div class="home-b-text">
+                            <h1>AirPods</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime alias atque, consectetur deleniti rerum non molestiae! Illo, error a quasi quisquam nulla, reprehenderit eum, repudiandae nihil quas doloremque perferendis pariatur.</p>
+                        </div>
+                        <div class="home-b-image">
+                            <img src="./assets/img/airpod1.png" alt="" id="img1">
+                            <img src="./assets/img/airpod2.png" alt="" id="img2">
+                        </div>
+                        <div class="home-b-button">
+                            <p>Scroll down for more</p>
+                            <a href="#features"><i class='bx bx-mouse bx-md'></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section B: Features -->
+        <section id="features">
+            <div class="container">
+                <div class="detail">
+                    <div class="detail-a">
+                        <div>
+                            <p>More than <br><span>24</span> <b>h</b><br> of battery life<br> with charging case</p>
+                        </div>
+                        <div>
+                            <p>Up to <br><span>5</span> <b>h</b><br> of battery life<br> on a single charge</p>
+                        </div>
+                        <div>
+                            <p>Just <br><span>15</span> <b>min</b><br> of charge equals up to 3 hours of audio</p>
+                        </div>
+                    </div>
+                    <div class="detail-b">
+                        <img src="./assets/img/airpods.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- FOOTER -->
     <footer id="footer"> 
-
+        <div class="footer-flex">
+            <p>Scss &copy; 2021. Tüm hakları saklıdır.</p>
+            <div class="social">
+                <a href="">
+                    <i class='bx bxl-youtube bx-sm'></i>
+                </a>
+                <a href="">
+                    <i class='bx bxl-instagram bx-sm'></i>
+                </a>
+                <a href="">
+                    <i class='bx bxl-linkedin bx-sm'></i>
+                </a>
+                <a href="">
+                    <i class='bx bxl-twitter bx-sm'></i>
+                </a>
+            </div>
+        </div>
     </footer>
 
     <!-- MAIN JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

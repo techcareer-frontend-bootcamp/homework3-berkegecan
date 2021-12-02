@@ -1,0 +1,95 @@
+// Home Pods
+#description {
+  .home {
+    height: 100vh;
+    padding-top: 3.2rem;
+    display: grid;
+    grid-template-rows: 1fr 7fr;
+
+    &-a {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 100%;
+
+        a {
+          color: $first-color;
+
+          &:hover {
+            font-weight: var(--big-font-size);
+            color: $second-color;
+          }
+        }
+      }
+    }
+
+    &-b {
+      display: grid;
+      grid-template-areas: 
+        ". text image ." 
+        "button button button button";
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 3fr 1fr;
+      grid-gap: 1rem;
+      box-sizing: border-box;
+      padding: 12rem 5rem 3rem;
+      background-color: rgba($border-color, $alpha: .05);
+      border-radius: 15px;
+      
+      &-text {
+        grid-area: text;
+
+        h1 {
+          font-size: var(--biggest-font-size);
+          font-weight: $font-regular;
+        }
+
+        p {
+          max-width: 16rem;
+        }
+      }
+
+      &-image {
+        grid-area: image;
+        position: relative;
+
+        #img1{
+          position: absolute;
+          width: 8rem;
+          top: -5rem;
+          animation-name: animate;
+          animation-duration: 8s;
+          animation-iteration-count: infinite;
+        }
+
+        #img2{
+          position: absolute;
+          width: 8rem;
+          left: 8.5rem;
+          top: -5rem;
+          animation-name: animate;
+          animation-duration: 8s;
+          animation-iteration-count: infinite;
+          animation-direction: reverse;
+        }
+      }
+
+      &-button {
+        grid-area: button;
+        text-align: center;
+        padding-top: 1rem;
+
+        p{
+          font-weight: var(--smaller-font-size);
+          padding-bottom: 1.5rem;
+        }
+      }
+    }
+  }
+}
